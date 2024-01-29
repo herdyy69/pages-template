@@ -1,4 +1,5 @@
 import type { Config } from "tailwindcss";
+import { fontPlugin } from "./src/config/tailwind/plugin";
 
 const config: Config = {
   content: [
@@ -8,6 +9,10 @@ const config: Config = {
   ],
   theme: {
     extend: {
+      fontFamily: {
+        nunito: ["var(--nunito)"],
+        albertSans: ["var(--albertSans)"],
+      },
       backgroundImage: {
         "gradient-radial": "radial-gradient(var(--tw-gradient-stops))",
         "gradient-conic":
@@ -15,6 +20,6 @@ const config: Config = {
       },
     },
   },
-  plugins: [],
+  plugins: [fontPlugin],
 };
 export default config;
