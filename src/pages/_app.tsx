@@ -1,6 +1,7 @@
+import { QueryProvider } from "@/context/query.context";
 import "@/styles/globals.css";
 import type { AppProps } from "next/app";
-import { Albert_Sans, Inter, Nunito } from "next/font/google";
+import { Albert_Sans, Nunito } from "next/font/google";
 
 const nunito = Nunito({
   subsets: ["latin"],
@@ -17,7 +18,9 @@ const albertSans = Albert_Sans({
 export default function App({ Component, pageProps }: AppProps) {
   return (
     <main className={`${nunito.className} ${albertSans.className}`}>
-      <Component {...pageProps} />
+      <QueryProvider>
+        <Component {...pageProps} />
+      </QueryProvider>
     </main>
   );
 }
