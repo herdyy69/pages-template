@@ -36,7 +36,7 @@ export const QueryProvider = ({ children }: any) => {
             }
           },
         }),
-      })
+      }),
   );
 
   return (
