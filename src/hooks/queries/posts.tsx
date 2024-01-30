@@ -10,7 +10,6 @@ import {
 import { AxiosResponse } from "axios";
 import api from "../api";
 import apiClient from "../apiClient";
-import { useSearchParams } from "next/navigation";
 
 type PostsResponse = AxiosResponse<BaseResponse<Posts>>;
 
@@ -23,7 +22,7 @@ const useInvalidateTable = () => {
 };
 
 export const usePostsList = (
-  options?: UseQueryOptions<AxiosResponse<BaseResponse<Posts[]>>>
+  options?: UseQueryOptions<AxiosResponse<BaseResponse<Posts[]>>>,
 ) => {
   return useQuery({
     queryKey: ["Posts-list"],
